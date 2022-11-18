@@ -3,16 +3,18 @@ import { motion } from 'framer-motion'
 
 const Navbar = () => {
   return (
-    <div className='fixed w-screen px-10 mx-auto py-10'>
-      <div className='flex justify-between'>
+    <div className='fixed  px-10 mx-auto py-10 w-screen z-10'>
+      <div className='flex justify-between  w-full'>
         <motion.div
           initial={{
             opacity: 0,
-            x: -200
+            x: -200,
+            scale:0
           }}
           animate={{
             opacity: 1,
-            x: 0
+            x: 0,
+            scale:1
           }}
           transition={{
             duration: 1.5
@@ -26,11 +28,13 @@ const Navbar = () => {
         <motion.div
           initial={{
             opacity: 0,
-            x: 200
+            x: 200,
+            scale:0
           }}
           animate={{
             opacity: 1,
-            x: 0
+            x: 0,
+            scale:1
           }}
           transition={{
             duration: 1.5
