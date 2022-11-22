@@ -1,6 +1,7 @@
 import Aboutme from "./components/Aboutme";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
+import Skills from "./components/Skills";
 
 
 function App() {
@@ -12,12 +13,17 @@ function App() {
      <Navbar />
 
      {/* Hero section */}
-     <section className="snap-start">
+     <section className="snap-start snap-mandatory">
      <Hero />
      </section>
      {/* About me */}
-     <section className="snap-center">
+     <section className="snap-center" id="aboutme">
       <Aboutme />
+     </section>
+
+     {/* Skills set */}
+     <section id="skills" className="snap-center">
+      <Skills />
      </section>
     </div>
   );

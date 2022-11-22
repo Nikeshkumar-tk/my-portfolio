@@ -3,7 +3,16 @@ import { Cursor, useTypewriter } from 'react-simple-typewriter'
 
 const Hero = () => {
 
-    const navButtondata = ["About me", "Experience", "Projects", "Skills"]
+    const navButtondata = [
+        {
+            title: "About me",
+            link: "#aboutme"
+        },
+        {
+            title:"Skills",
+            link:"#skills"
+        }
+    ]
     const [text, count] = useTypewriter({
         words: [
             "Hi i am Nikesh kumar ",
@@ -24,12 +33,12 @@ const Hero = () => {
                                 initial={{
                                     opacity: 0,
                                     x: -300,
-                                    scale:0
+                                    scale: 0
                                 }}
                                 animate={{
                                     opacity: 1,
                                     x: 0,
-                                    scale:1
+                                    scale: 1
                                 }}
                                 transition={{
                                     delay: 1.1 + index * 0.5,
@@ -38,7 +47,7 @@ const Hero = () => {
                                 className='cursor-pointer hover:text-yellow-400 tracking-wider'
                             >
 
-                                {data}
+                              <a href={data.link}> {data.title}</a> 
                             </motion.li>
                         ))
                     }
@@ -48,22 +57,22 @@ const Hero = () => {
             {/* Image container with intro */}
             <div className='text-center w-40 flex flex-col items-center space-y-8 sm:mr-80  relative'>
 
-                <motion.div 
-                initial = {{
-                    scale:0,
-                    opacity:0,
-                    y:200
+                <motion.div
+                    initial={{
+                        scale: 0,
+                        opacity: 0,
+                        y: 200
 
-                }}
-                animate = {{
-                    scale:1,
-                    opacity:1,
-                    y:0
-                }}
-                transition = {{
-                    duration:1
-                }}
-                className='h-[200px] w-[200px] sm:h-[400px] sm:w-[400px]'>
+                    }}
+                    animate={{
+                        scale: 1,
+                        opacity: 1,
+                        y: 0
+                    }}
+                    transition={{
+                        duration: 1
+                    }}
+                    className='h-[200px] w-[200px] sm:h-[400px] sm:w-[400px]'>
 
                     <img src="https://avatars.githubusercontent.com/u/104181447?v=4"
                         alt="profile pic"
@@ -84,7 +93,7 @@ const Hero = () => {
                             duration: 1.5
                         }}
                         className='mt-7'>{text}</motion.span>
-                        <Cursor cursorColor='#f7AB0A'/>
+                    <Cursor cursorColor='#f7AB0A' />
                 </div>
 
             </div>

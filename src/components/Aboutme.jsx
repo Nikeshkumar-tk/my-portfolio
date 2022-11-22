@@ -4,71 +4,39 @@ const Aboutme = () => {
     const navButtondata = ["About me", "Experience", "Projects", "Skills"]
 
     return (
-        <div className='h-screen snap-y text-white flex flex-col-reverse justify-center items-center  px-10 overflow-x-hidden relative'>
-            {/* Sidebar */}
-            <div className='overflow-hidden  mt-10 '>
-                <ul className='flex gap-3 whitespace-nowrap flex-col items-center'>
-                    {
-                        navButtondata.map((data, index) => (
-                            <motion.li
-                                initial={{
-                                    opacity: 0,
-                                    x: -300
-                                }}
-                                animate={{
-                                    opacity: 1,
-                                    x: 0
-                                }}
-                                transition={{
-                                    delay: 1.1 + index * 0.5,
-                                    duration: 1
-                                }}
-                            >
-                                <button className='bg-[#39393b] h-8 rounded-md px-5 hover:bg-[#717175]'>
-                                    {data}
-                                </button>
-                            </motion.li>
-                        ))
-                    }
-                </ul>
-            </div>
+        <div className='h-screen grid place-content-center px-10 sm:px-60'>
+            <div className='flex flex-col space-y-10 min-h-[400px] '>
 
-            {/* Image container with intro */}
-            <div className='text-center w-40 flex flex-col items-center'>
-                <motion.div
+                <motion.h3
                     initial={{
                         opacity: 0,
-                        y: 300
+                        x: -100
                     }}
-                    animate={{
+                    whileInView={{
                         opacity: 1,
-                        y: 0
+                        x: 0
                     }}
                     transition={{
                         duration: 1.5
                     }}
-                    className='h-[200px] w-[200px] rounded-full border border-[#ffff]'>
+                    className='text-gray-400 tracking-[10px] text-2xl'>About me</motion.h3>
+                <motion.article
+                initial = {{
+                    opacity:0
+                }}
+                whileInView = {{
+                    opacity:1
+                }}
+                transition = {{
+                    duration:1.5,
+                    delay:1
+                }}
+                className='sm text-white'>
+                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident ipsum tempora dolore omnis sequi, quae iusto facere? Repellendus adipisci libero saepe necessitatibus magni blanditiis nesciunt, provident, debitis, a id voluptates ipsam laudantium suscipit vel optio nulla doloremque minima voluptatum incidunt.
 
-                    <img src="https://avatars.githubusercontent.com/u/104181447?v=4"
-                        alt="profile pic"
-                        className='h-full rounded-full'
-                    />
-                </motion.div>
-
-                <motion.h2
-                    initial={{
-                        opacity: 0
-                    }}
-                    animate={{
-                        opacity: 1
-                    }}
-                    transition={{
-                        delay: 1.6,
-                        duration: 1.5
-                    }}
-                    className='mt-7'>Lorem ipsum dolor sit amet consectetur adipisicing elit.</motion.h2>
-
+                </motion.article>
             </div>
+
         </div>
     )
 }
